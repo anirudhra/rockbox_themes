@@ -1,0 +1,68 @@
+# Theme Name: MinimalX
+# Coded By: Alex Mayer (amayer on IRC)
+# Art By: maverick07x(Based on his VLC MinimalX Theme[ http://maverick07x.deviantart.com/art/VLC-MinimalX-385698882 ])
+# Platform: iPod Classic (320x240) - Dev Build bb87590-130701
+# Version: 1.0
+# Licenced CC-BY-SA 3.0
+# Last updated: 30th July 2013
+# Converted to have foreground colour changable by P Poorten Feb 2017
+
+# Hide The Status Bar
+%wd
+
+# Preload Fonts
+%Fl(2,18-Scada-Bold.fnt)
+
+# Preload Images
+%xl(A,pb.bmp,0,0)
+%xl(B,pb_back.bmp,0,0)
+%xl(C,play.bmp,0,0,2)
+%xl(D,seek.bmp,0,0,4)
+%xl(E,repeat.bmp,0,0,2)
+%xl(F,shuffle.bmp,0,0)
+%xl(G,batt.bmp,10,0)
+
+# Handle Repeat and Shuffle
+%?ps<%?mm<%Vd(d)|%Vd(e)>|%?mm<|%Vd(c)>>
+
+# Handle Battery
+%?if(%bl, <=, 20)<%Vd(g)>
+
+# Current Menu Title
+%V(4,4,316,18,2)%Vf(-)
+%ac%?Lt<%Lt>
+
+# Default Viewport
+%Vi(-,0,25,320,153,-)%Vf(a0a0a0)
+
+# Progress Bar
+%V(0,180,320,10,-)
+%pb(0,0,320,10,A,backdrop,B)
+
+# Repeat
+%Vl(c,10,209,16,15,-)
+%?mm<|%xd(Ea)|%xd(Eb)|%xd(Ea)|%xd(Ea)>
+# Shuffle
+%Vl(d,10,209,16,15,-)
+%xd(F)
+# Repeat And Shuffle
+%Vl(e,10,209,16,15,-)
+%?mm<|%xd(Ea)|%xd(Eb)|%xd(Ea)|%xd(Ea)>
+%Vl(e,40,208,13,13,-)
+%xd(F)
+
+# Seek Back
+%V(100,210,18,11,-)
+%xd(Da);
+
+# Play Pause
+%V(153,207,15,18,-)
+%?mp<%xd(Cb)|%xd(Ca)|%xd(Cb)|%xd(Cb)|%xd(Cb)>
+
+# Seek Forward
+%V(206,210,18,11,-)
+%xd(Dc);
+
+# Battery Warning
+%Vl(g,285,195,35,18,-)%Vf(FFFFFF)
+%?if(%St(battery display),=,numeric)<%ar%bl%%|%xd(G)>

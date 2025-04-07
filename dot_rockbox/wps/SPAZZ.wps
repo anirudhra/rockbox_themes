@@ -1,0 +1,118 @@
+#
+#__SPAZZ
+#__by__CHUCK_LARDO
+#__licence__CC-BY-SA 4.0
+#__version__1.1
+#__2025
+#__target resolution 320x240
+#__tested on iPod Classic (6th Gen) and HiFi Walker H2
+#
+#__WPS File
+#
+#
+#__Hide The Status Bar
+%wd
+#
+#__Preload Fonts
+%Fl(2,12-KodeMono-SemiBold.fnt)
+%Fl(3,15-KodeMono-SemiBold.fnt)
+%Fl(4,22-KodeMono-SemiBold.fnt)
+%Fl(5,29-KodeMono-SemiBold.fnt)
+%Fl(6,72-KodeMono-Bold.fnt)
+#
+#
+#__Preload Images
+%xl(P,bb_rbd_123.bmp,1,3)
+%xl(PBB,pb_back.bmp,0,0)
+%xl(PB,pb.bmp,0,0)
+%xl(BBB,bb_back.bmp,0,0)
+%xl(BB,bb.bmp,0,0)
+%xl(VBB,vb_back.bmp,0,0)
+%xl(VB,vb.bmp,0,0)
+%xl(T,stop_icon.bmp,0,0)
+%xl(L,play_icon.bmp,0,0)
+%xl(Z,pause_icon.bmp,0,0)
+%xl(F,forward_icon.bmp,0,0)
+%xl(R,rewind_icon.bmp,0,0)
+%xl(O,off.bmp,24,0)
+%xl(N,on.bmp,24,0)
+#
+#
+#__Show Volume Bar unless Hold Switch is on
+%?mh<%Vd(holdBar)|%Vd(volumeBar)>
+#
+#
+###__Main Display__###
+#
+#__Clear Screen
+%V(0,0,320,240,-)
+#
+#__Volume Text
+%V(20,20,45,30,4)
+%ac%pv%Vs(invert)
+#
+#__Volume Bar
+%Vl(volumeBar,70,23,100,18,-)
+%pv(0,0,100,18,VB,backdrop,VBB)
+#
+#__Hold
+%Vl(holdBar,70,20,100,30,4)
+%acLOCKED%Vs(invert)
+#
+#__Shuffle
+%V(177,18,47,11,2)
+SHF%?ps<%xd(N)|%xd(O)>
+#
+#__Repeat
+%V(177,33,47,11,2)
+RPT%?mm<%xd(O)|%xd(N)|%xd(N)|%xd(N)|%xd(N)>
+#
+#__Battery BAR
+%V(-90,17,69,9,-)
+%bl(0,0,69,9,BB,backdrop,BBB)
+#
+#__Battery Text Percent
+%V(-90,28,69,17,3)
+%ac%?bp<%t(.6)CHARGING;%t(.6)|%xd(P) %bl%%>%Vs(invert)
+#
+#__Track Progress Bar
+#__Line
+%V(20,53,280,1,-)
+%dr(0,0,280,1)
+#
+#__Slider
+%V(20,54,280,5,-)
+%pb(0,0,280,5,PBB,slider,PB)
+#
+#__Line
+%V(20,59,280,1,-)
+%dr(0,0,280,1)
+#
+#__Artist
+%V(20,66,210,32,5)
+%al%s%ia
+#
+#__Track Title
+%V(20,100,160,17,3)
+%al%s%it
+#
+#__Channels
+%V(-80,68,60,17,3)
+%ac%?St(channels)<STEREO|MONO|CUSTOM|LEFT|RIGHT|KARAOKE>
+#
+#__File Type
+%V(-80,91,60,24,4)
+%ac%?fc<MP1|MP2|MP3|AIFF|WAV|VORBIS|FLAC|MPC|A52|WAVPAC|ALAC|AAC|SHORTEN|SID|ADX|NSF|SPEEX|SPC|APE|WMA|UNKNOWN?>%Vs(invert)
+#
+#__Peak Meter Bars
+%V(20,129,280,-,6)
+%pm
+#
+#__Play/Pause Icons
+%V(20,214,21,11,-)
+%?mp<%xd(T)|%xd(L)|%xd(Z)|%xd(F)|%xd(R)>
+#
+#__Track Time / Playlist position / Counter
+%V(43,211,257,17,3)
+%al%pc_%pr%ac%?if(%pt, >, 35999)<|%pp_%pe>%ar%?if(%pe, >, 999)<%pR|%pL_%pR>
+#

@@ -1,0 +1,138 @@
+# Theme:WMP11
+# Version:1.0 (3/20/2025)
+# Device: iPod Video
+# License: CC-BY-SA
+# Creator: VB
+#
+#
+# Credits to other creators:
+# This theme wouldn't have been possible without the earlier work of:
+# creators of ipodmod3blk (K4sum1), ipodmod3blkfixed (Paul Sauro),
+# adwaitapod (evan Dook), iRetro (J Donsen), iPod reFresh (Ciprian Dragu)
+# For the WPS Player "CD Player" display, credits to u/opanic on Reddit
+# For the battery, hold, and disk access icons, credits to K4sum1
+# For the concept, credits to Microsoft.. but everyone already knows this lol
+# For the font, credits to Arne @ arnesava.com. Og font files can be found here:
+# https://arnesava.github.io/w95font/
+# Go listen to Andre Nickatina, The Pharcyde, Gangsta Pat, Tommy Wright III, Celly
+# Cel, Playa Fly, Al Kapone, Lil Keke, Geto Boys, Three 6 Mafia and Self Tightld,
+# who are my fav artists on my iPod that I feel deserve a shoutout!
+# Thank you so much for all the support this theme received on Reddit!
+# I hope you enjoy it :) <3
+# For suggestions/requests/other inquiries, dm me on Reddit: u/suzdali
+
+
+# Hide The Status Bar
+%wd
+
+# Load Backdrop
+%X(vistawps.bmp)
+
+# Preload Fonts
+%Fl(2,14-SegoeUI.fnt)
+%Fl(3,20-segoe-ui.fnt)
+%Fl(4,16-segoe-ui.fnt)
+%Fl(5,18-segoe-ui.fnt)
+%Fl(6,18-segoe-ui-italic.fnt)
+
+
+# Preload Images
+#%xl(A,aa.bmp,0,0)
+%xl(B,battery.bmp,0,0,24)
+%xl(C,vistapb.bmp,0,0)
+%xl(D,vistapbback.bmp,0,0)
+%xl(E,vistaps.bmp,0,0)
+%xl(F,pbl.bmp,0,0)
+%xl(G,pbr.bmp,296,0)
+%xl(J,vistamute.bmp,0,0,2)
+%xl(K,vistavol.bmp,0,0)
+%xl(L,vistavolback.bmp,0,0)
+%xl(M,vistashuffle.bmp,0,0)
+%xl(N,vistarepeat.bmp,0,0,5)
+%xl(O,Hold Icon - SBS.bmp,0,0)
+%xl(P,vistalargestatus.bmp,0,0,4)
+%xl(Q,vistavolps.bmp,0,0)
+
+
+# Album Art Settings
+%Cl(0,0,141,141,c,c)
+# Album Art
+%V(10,24,141,141,-)
+%?C<%Cd>
+
+# Battery
+%V(256,9,19,10,-)
+%?bp<%?bc<%t(1.0)%xd(Ba);%t(1.0)%xd(Bb)|%xd(Bc)>|%?bl<%xd(Bd)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)|%xd(Bk)|%xd(Bl)|%xd(Bm)|%xd(Bn)|%xd(Bo)|%xd(Bp)|%xd(Bq)|%xd(Br)|%xd(Bs)|%xd(Bt)|%xd(Bu)|%xd(Bv)|%xd(Bw)|%xd(Bx)>>#
+
+# Battery text
+%V(220,5,32,14,2)%Vf(000000)%Vb(000000)
+%ar%bl%%
+#
+
+#-- Hold Icon
+%V(5,3,7,10,-)%Vf(F4F4F4)%Vb(000000)
+%?mh<%xd(O)|%?mr<%xd(O)>>
+
+
+#-- Time Bar
+%V(285,5,30,14,2)%Vf(000000)%Vb(000000)
+%s%al%?cf<%cH:%cM|%cl:%cM>
+
+
+# Title
+%V(163,28,150,22,4)%Vf(000000)
+%al%s%?it<%s%it|%fn>
+# Artist
+%V(163,76,150,22,4)%Vf(000000)
+%al%s%?ia<%ia|%?d(2)<%d(2)|%Sx(Artist)>>
+# Album
+%V(163,52,150,22,4)%Vf(000000)
+%al%s%?id<%id|%?d(1)<%d(1)|%Sx(Album)>>
+# Year
+%V(163,100,140,22,4)%Vf(000000)
+%al%?iy<%iy>
+# Song\Playlist Count
+%V(163,124,140,22,4)
+%Vf(000000)
+%al%pp/%pe
+# File details
+%V(163,148,140,22,4)%Vf(000000)
+%fc, %fbkbps %fkkhz
+
+
+# Song Current Time
+%V(10,173,57,14,2)%Vf(000000)
+%al%pc
+# Song Remaining Time
+%V(255,173,57,14,2)%Vf(000000)
+%ar%pt
+
+# Progress Bar
+# With a little hacking to make border look nice
+%V(0,192,320,2,-)
+%xd(F)
+%pb(0,0,320,2,C,backdrop,D,slider,E)
+%xd(G)
+
+# Repeat
+%V(46,210,17,17,-)
+%xd(N, %mm)
+# %?mm<%xd(Na)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)>
+
+# Shuffle
+%V(20,209,19,19,-)
+%?ps<%xd(M)>
+
+# Mute
+%V(227,211,17,17,-)
+%?pv<%xd(Jb)|%xd(Ja)|%xd(Ja)|%xd(Ja)>
+
+# Volume
+# With a little hacking to make border look nice
+%V(248,211,57,14,-)
+%pv(0,0,57,14,K,backdrop,L,slider,Q)
+
+#-- Status icons
+%V(104,196,113,44,-)%Vf(ffffff)%Vb(F4F4F4)
+%?mp<|%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)||||>
+#

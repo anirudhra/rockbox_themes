@@ -1,0 +1,142 @@
+#
+#      `....            `..           `..
+#    `..    `..         `..       `.  `..
+#  `..        `..`. `...`..         `.`. `.
+#  `..        `.. `..   `.. `..  `..  `..
+#  `..        `.. `..   `..   `..`..  `..
+#    `..     `..  `..   `..   `..`..  `..
+#      `....     `...   `.. `..  `..   `..
+#
+#                  Orbit 1.5
+#              Chris Soffke 2025
+#                   CC-BY-SA
+#
+#           inspired by Jihoon Kim's
+#                   Horizon
+#
+%Fl(3,15-Inter-Bold.fnt)
+%Fl(8,20-Inter-SemiBold.fnt)
+#
+%xl(L,busy_indicator.bmp,0,6,16)
+%xl(B,batt_status.bmp,0,0,10)
+%xl(speaker_too_loud,speaker_too_loud.bmp,0,0)
+%xl(vb_backdrop,vb_sbs_backdrop.bmp,0,0)
+%xl(usb_backdrop,backdrop_usb.bmp,0,5)
+#
+%?or(%if(%St(battery display), =,numeric),%if(%cs,=,10))<%Vd(battery_pct)>
+%?mv(1.5)<%Vd(volume_left)%Vd(volumebar)|%?or(%if(%St(battery display), =,numeric),%if(%cs,=,10))<%?mp<%Vd(nothing_playing)|%Vd(albumart)%Vd(trackshort)|%Vd(paused)%Vd(trackshort)>|%?mp<%Vd(nothing_playing)|%Vd(albumart)%Vd(tracklong)|%Vd(paused)%Vd(tracklong)>>>
+#
+%?lh<%Vd(busy)>
+%?bs<%Vd(sleep)>
+%?mh<%Vd(lock)|%?bs<%Vd(title_s)|%Vd(title_l)>>
+%?if(%cs, =, 21)<%Vd(USB)|%Vd(empty)>
+#
+# ---------
+# Background:
+# ---------
+%X(backdrop_sbs.bmp)
+#
+# ---------
+# Title Area:
+# ---------
+%V(0,0,-,27,-)
+%Vb(f7f7f7)
+#
+%Vl(lock,6,6,15,15,-)
+%Vb(F7F7F7)
+%x(lock,lock.bmp,3,2)
+#
+%Vl(title_s,7,3,-40,22,8)
+%Vf(f24e61)
+%Vb(f7f7f7)
+%s%al%?cs<Rockbox||Recording|FM Radio|%Lt|%Lt|%Lt|%Lt|%Lt|%?mp<|%?cf<%cH:%cM|%cl:%cM %cP>>|%Lt|%Lt|%Lt|%Lt|%?if(%Lt, =,Context Menu)<Perform Action...|%Lt>|%Lt|%Lt|%Lt|%Lt|%Lt|Rockbox>
+#
+%Vl(title_l,7,3,-26,22,8)
+%Vf(f24e61)
+%Vb(f7f7f7)
+%s%al%?cs<Rockbox||Recording|FM Radio|%Lt|%Lt|%Lt|%Lt|%Lt|%?mp<|%?cf<%cH:%cM|%cl:%cM %cP>>|%Lt|%Lt|%Lt|%Lt|%?if(%Lt, =,Context Menu)<Perform Action...|%Lt>|%Lt|%Lt|%Lt|%Lt|%Lt|Rockbox>
+#
+%Vl(sleep,-32,3,-18,22,-)
+%Vb(F7F7F7)
+%x(sleep,sleep.bmp,0,5)
+#
+%Vl(busy,-18,3,-7,22,-)
+%Vb(F7F7F7)
+%t(0.1)%xd(La);%t(0.1)%xd(Lb);%t(0.1)%xd(Lc);%t(0.1)%xd(Ld);%t(0.1)%xd(Le);%t(0.1)%xd(Lf);%t(0.1)%xd(Lg);%t(0.1)%xd(Lh);%t(0.1)%xd(Li);%t(0.1)%xd(Lj);%t(0.1)%xd(Lk);%t(0.1)%xd(Ll);%t(0.1)%xd(Lm);%t(0.1)%xd(Ln);%t(0.1)%xd(Lo);%t(0.1)%xd(Lp)
+#
+# ---------
+# Main Area:
+# ---------
+# UI Viewport
+%Vl(empty,0,27,2,-37,-)
+%Vb(f7f7f7)
+%Vi(-,2,27,-2,-37,-)
+%Vf(000000)
+%Vb(F7F7F7)
+%Vl(empty,-2,27,-,-37,-)
+%Vb(f7f7f7)
+#
+%Vl(USB,0,27,-,-,-)
+%Vf(000000)
+%Vb(F7F7F7)
+%xd(usb_backdrop)
+#
+# ---------
+# Footer:
+# ---------
+%Vl(empty,0,-37,-,-31,-)
+%Vb(f7f7f7)
+%V(0,-31,-,-,-)
+%Vb(f7f7f7)
+#
+%Vl(battery_pct,-87,-26,38,17,3)
+%Vf(000000)
+%Vb(F7F7F7)
+ %?if(%bl, =, 100)<CGD|%bl %%>
+#
+%V(-49,-27,27,19,-)
+%Vb(F7F7F7)
+%?bp<%?bl<%xd(Ba)|%xd(Ba)|%xd(Ba)|%xd(Bb)|%xd(Bb)|%xd(Bb)|%xd(Bb)|%xd(Bc)|%xd(Bc)|%xd(Bc)|%xd(Bc)|%xd(Bc)|%xd(Bc)|%xd(Bd)|%xd(Bd)|%xd(Bd)|%xd(Bd)|%xd(Bd)|%xd(Bd)|%xd(Bd)|%xd(Be)|%xd(Be)>|%?bl<%xd(Bf)|%xd(Bf)|%xd(Bf)|%xd(Bg)|%xd(Bg)|%xd(Bg)|%xd(Bg)|%xd(Bh)|%xd(Bh)|%xd(Bh)|%xd(Bh)|%xd(Bh)|%xd(Bh)|%xd(Bi)|%xd(Bi)|%xd(Bi)|%xd(Bi)|%xd(Bi)|%xd(Bi)|%xd(Bi)|%xd(Bj)|%xd(Bj)>>
+#
+%Vl(albumart,21,-30,24,24,-)
+%?C<|%x(AlbumPlaceholder,albumPlaceholder_small.bmp,0,0)>
+%Cl(0,0,24,24)
+%Vb(ededed)
+%Cd
+#
+%Vl(nothing_playing,18,-26,-87,17,3)
+%Vf(929292)
+%Vb(F7F7F7)
+%?cf<%cH:%cM|%cl:%cM %cP>%?and(%if(%St(battery display), !=,numeric),%if(%cs,!=,10))< - %?if(%bl, =, 100)<CGD|%bl%%>>
+#
+%Vl(paused,23,-26,21,17,-)
+%Vb(F7F7F7)
+%x(pause_small,pause_small.bmp,8,4)
+#
+#
+# -- if battery percentage is displayed
+%Vl(trackshort,52,-26,-87,17,3)
+%Vf(000000)
+%Vb(F7F7F7)
+%s%al%?it<%it|%fn>
+#
+# -- otherwise
+%Vl(tracklong,52,-26,-53,17,3)
+%Vf(000000)
+%Vb(F7F7F7)
+%s%al%?it<%it|%fn>
+#
+#
+# --------   Volume Indicators   -------
+#
+%Vl(volume_left,39,-24,8,13,-)
+%x(speaker_mute,speaker_mute.bmp,0,0)
+#
+%Vl(volumebar,58,-22,84,9,-)
+%pv(0,0,-,-,vb_sbs.bmp,backdrop,vb_backdrop)
+#
+%Vl(volumebar,150,-27,19,17,-)
+%x(speaker_loud,speaker_loud.bmp,0,0)
+#
+%Vl(volumebar,175,-27,4,18,-)
+%?if(%pv, >, 0)<%xd(speaker_too_loud)>

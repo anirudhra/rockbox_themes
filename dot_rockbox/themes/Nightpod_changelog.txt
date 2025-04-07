@@ -1,0 +1,84 @@
+┌─────────────────────────────────────────────────────────────────────────┐
+│          ______________________________________________________         │
+│              _     _                                                    │
+│              /|   /    ,         /                            /         │
+│          ---/-| -/---------__---/__--_/_------__----__----__-/-         │
+│            /  | /    /   /   ) /   ) /      /   ) /   ) /   /           │
+│          _/___|/____/___(___/_/___/_(_ ____/___/_(___/_(___/___         │
+│                            /              /                             │
+│                                                                         │
+│                              Rockbox Theme                              │
+│   Rev. 13                                         by Christian Soffke   │
+│   2023-06-10                                                 CC-BY-SA   │
+│                                                                         │
+│   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓  │
+│   ┃                                                                  ┃  │
+│   ┃                  Dark version of Interpod theme                  ┃  │
+│   ┃                                                                  ┃  │
+│   ┃     Interpod was originally loosely based on David Barkan's      ┃  │
+│   ┃                            AMusicPod                             ┃  │
+│   ┃                                                                  ┃  │
+│   ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛  │
+│                                                                         │
+│                                                                         │
+│    Changelog:                                                           │
+│                                                                         │
+│    Rev. 13 (2013-06-10):                                                │
+│      - Switch to 16bit BMP to prevent redundant dithering of backdrop   │
+│                                                                         │
+│    Rev. 12 (2023-06-10):                                                │
+│      - Use %x instead of %xd for backdrop                               │
+│                                                                         │
+│    Rev. 11 (2023-06-10):                                                │
+│      - Pre-dithered backdrop for improved compatibility with older      │
+│        versions of Rockbox                                              │
+│                                                                         │
+│    Rev. 10 (2023-06-10):                                                │
+│      - Album art has rounded corners                                    │
+│      - New backdrop                                                     │
+│      - New progress bar.                                                │
+│      - Increase height of progress bar when ffw-ing or rewinding        │
+│      - New volume bar. Show warning when volume above 0dB               │
+│      - Use "Rockbox" in list titles where "iPod" was used before        │
+│      - Set white as foreground color to improve usability of keyboard   │
+│      - Red accent color now stays fixed (ff004a). Other theme variants  │
+│        have been removed. You can still search&replace in WPS file      │
+│        to pick another value.                                           │
+│      - Fix visual glitch in bottom bar                                  │
+│      - Fix unintended color tint of USB backdrop                        │
+│                                                                         │
+│    Rev. 9 (2022-12-26).                                                 │
+│      - Don't display battery percentage on QuickScreen if it is         │
+│        already displayed in the menu bar                                │
+│                                                                         │
+│    Rev. 8 (2022-12-26):                                                 │
+│      - Optionally display battery percentage in all menus               │
+│      - Added minimalistic icons necessary to support basic RB           │
+│        functionality                                                    │
+│                                                                         │
+│    Rev. 7 (2021-10-13):                                                 │
+│      - WPS Design Overhaul                                              │
+│                                                                         │
+│    Rev. 6 (2021-10-10):                                                 │
+│      - Changed foreground color                                         │
+│                                                                         │
+│    Rev. 5 (2021-10-09):                                                 │
+│      - Changed foreground color                                         │
+│                                                                         │
+│    Rev. 4 (2021-10-09):                                                 │
+│      - Changed foreground and line selector colors                      │
+│                                                                         │
+│    Rev. 3 (2021-10-08):                                                 │
+│      - Added Graphitepod theme                                          │
+│                                                                         │
+│    Rev. 2 (2021-10-04):                                                 │
+│      - Adjusted contrast                                                │
+│      - Added Pandapod (theme with white accent color)                   │
+│                                                                         │
+│    Rev. 1 (2021-10-03):                                                 │
+│      - Fixed visual glitch                                              │
+│                                                                         │
+│    Rev. 0 (2021-10-03):                                                 │
+│      - Initial release                                                  │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘

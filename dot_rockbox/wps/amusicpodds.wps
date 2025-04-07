@@ -1,0 +1,123 @@
+#Theme Name: AMusicPod Dark
+#Author: David Barkan (imnot_here) - dbarkan@gmail.com
+#Based on xhibition by: Justin Fite - jdotfite@gmail.com
+#Platform: iPod Video/Classic (320x240x16)
+#License: CC BY-SA 4.0
+#Version: 1.2 Std Version
+#Last updated: 08/08/21
+#
+#
+# Disable Status Bar
+%wd
+# Load Background
+%V(0,0,-,-,-)%VB
+%x(Ca,bkg_d.bmp,0,0)
+%V(0,0,-,-,-)
+#
+# Preload Images
+%xl(A,lockd.bmp,0,0,2)
+%xl(C,bkg_d.bmp,0,0)
+%xl(B,battery-status_white.bmp,0,0,9)
+%xl(L,loadingd.bmp,0,0,16)
+%xl(P,play-status_white.bmp,0,0,4)
+%xl(R,repeat.bmp,0,0,3)
+%xl(S,shuffle.bmp,0,0,1)
+%xl(X,volume-icons_white.bmp,0,0,7)
+#
+# Fonts
+%Fl(2,13-SFCompactText-Bold.fnt)
+%Fl(3,14-SFCompactText-Regular.fnt)
+%Fl(9,22-SF-Compact-Display-Light.fnt)
+%Fl(8,23-SF-Compact-Text-Bold.fnt)
+# 
+#
+########## STATUS BAR ##########
+#
+#Volume Icon
+%V(2,6,22,15,-)
+%?pv<%xd(Xg)|%xd(Xf)|%xd(Xe)|%xd(Xd)|%xd(Xc)|%xd(Xb)|%xd(Xa)>
+#
+#Play Status Icon
+%V(28,6,26,15,-)
+%?mp<|%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)>
+#
+# Shuffle Icon
+%V(5,43,18,18,-)
+%?ps<%xd(Sa)|>
+#
+# Repeat Icon
+%V(5,65,18,18,-)
+%?mm<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rc)>
+#
+#
+# Memory Access
+%V(242,8,9,9,-)
+%?lh<%t(0.1)%xd(La);%t(0.1)%xd(Lb);%t(0.1)%xd(Lc);%t(0.1)%xd(Ld);%t(0.1)%xd(Le);%t(0.1)%xd(Lf);%t(0.1)%xd(Lg);%t(0.1)%xd(Lh);%t(0.1)%xd(Li);%t(0.1)%xd(Lj);%t(0.1)%xd(Lk);%t(0.1)%xd(Ll);%t(0.1)%xd(Lm);%t(0.1)%xd(Ln);%t(0.1)%xd(Lo);%t(0.1)%xd(Lp)|>
+#
+# Battery Numeric
+%V(253,6,32,14,3)%Vf(ffffff)
+%ar%bl%%
+#
+# Battery Icon
+%V(288,6,30,14,-)
+%?bp<%?bc<%xd(Ba)|%xd(Ba)>|%?bl<|%xd(Bh)|%xd(Bg)|%xd(Bf)|%xd(Be)|%xd(Bd)|%xd(Bc)|%xd(Bb)>>
+#
+# File Type & File BitRate alternation
+%V(255,24,60,13,2)%Vf(dbdbdb)
+%ar%t(6)%fc;%ar%t(6)%fbkbps
+#
+# Lock
+%V(308,39,7,9,-)
+%?mh<%xd(Ab)|%xd(Aa)>
+#
+#Track # of #
+%Vd(current)
+%Vl(current,5,24,100,13,2)
+%Vf(dbdbdb)
+%s%al%pp %Sx(of) %pe
+#
+########## END STATUS BAR ##########
+#
+#Current Track
+%Vd(current)
+%Vl(current,10,170,305,24,8)
+%Vf(ffffff)
+%?mp<%Vf(ffffff)|%Vf(ffffff)|%Vf(ffffff)|%Vf(ffffff)|%Vf(ffffff)>
+%s%al%?it<%it|%fn>
+#
+#Current Artist
+%V(10,193,305,24,9)
+%Vf(dbdbdb)
+%?mp<%Vf(dbdbdb)|%Vf(dbdbdb)|%Vf(dbdbdb)|%Vf(dbdbdb)|%Vf(dbdbdb)>
+%s%?ia<%t(5)%al%ia|%fn>;%?id<%t(5)%al%id|%t(0)>
+#
+# If volume changed, display volume bar, else display progress bar and elapsed / remaining times 
+#Progress / vol Bar
+%?mv(.5)<%Vd(volume)|%Vd(pb)>
+#
+#Progress Bar
+#%T(0,0,275,9,progressbar)
+%Vl(pb,58,224,204,2,-)
+%pb(0,0,204,2,pb.bmp)
+#
+#Volume Bar
+%Vl(volume,58,224,204,2,-)
+%pv(0,0,204,2,volume.bmp)
+#
+#Time Current
+%V(12,218,38,14,3)
+%Vf(dbdbdb)
+%ar%pc
+#
+#Time Remaining
+%V(268,218,39,14,3)
+%Vf(dbdbdb)
+%al-%pr
+#
+# Album Art/Info Viewport Conditional
+%?C<%Vd(a)|%Vd(b)>
+#
+# Album Art
+%Vl(a,85,14,150,150,-)
+%Cl(0,0,150,150,c,c)
+%Cd

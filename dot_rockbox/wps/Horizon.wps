@@ -1,0 +1,142 @@
+#__Horizon
+#__by__Jihoon_Kim_
+#__based_on_AdwaitaPod_by_Dook
+#__licence__CC-BY-SA 4.0
+#__version__0.2
+#__2025
+#__target resolution 320x240
+#__tested on Surfans F20
+#
+%wd
+%Fl(3,18-Cantarell-Regular.fnt)
+%Fl(4,18-Cantarell-Bold.fnt)
+%Fl(5,20-Cantarell-Regular.fnt)
+%Fl(6,20-Cantarell-Bold.fnt)
+#-- Icons --#
+%xl(SleepIcon,SleepStatus.bmp,2,1)
+%xl(HoldIcon,HoldStatus.bmp,2,1)
+%xl(L,LoadingStatus.bmp,12)
+%xl(BatteryIcon,BatteryStatus.bmp,12)
+%xl(ChargingIcon,ChargeStatus.bmp,11)
+%xl(ShuffleIcon,ShuffleStatus.bmp,2)
+%xl(RepeatIcon,RepeatStatus.bmp,5)
+#-- Album Art --#
+%xl(CoverArtMask,CoverArtMask.bmp)
+%xl(PlayerFallback,PlayerFallback.bmp,0,30)
+#-- Player UI --#
+%xl(PlayIcon,PlayIcon.bmp,4)
+%xl(PlaylistPositionIcon,PlaylistPositionIndicators.bmp,4)
+#-- Volume Slider --#
+%xl(VolumeIcons,VolumeIcons.bmp,4)
+#-- Circular Progress Bar --#
+%xl(Progressa,ProgressBar-0.bmp,124,29)
+%xl(Progressb,ProgressBar-4.bmp,124,29)
+%xl(Progressc,ProgressBar-8.bmp,124,29)
+%xl(Progressd,ProgressBar-12.bmp,124,29)
+%xl(Progresse,ProgressBar-16.bmp,124,29)
+%xl(Progressf,ProgressBar-20.bmp,124,29)
+%xl(Progressg,ProgressBar-24.bmp,124,29)
+%xl(Progressh,ProgressBar-28.bmp,124,29)
+%xl(Progressi,ProgressBar-32.bmp,124,29)
+%xl(Progressj,ProgressBar-36.bmp,124,29)
+%xl(Progressk,ProgressBar-40.bmp,124,29)
+%xl(Progressl,ProgressBar-44.bmp,124,29)
+%xl(Progressm,ProgressBar-48.bmp,124,29)
+%xl(Progressn,ProgressBar-52.bmp,124,29)
+%xl(Progresso,ProgressBar-56.bmp,124,29)
+%xl(Progressp,ProgressBar-60.bmp,124,29)
+%xl(Progressq,ProgressBar-64.bmp,124,29)
+%xl(Progressr,ProgressBar-68.bmp,124,29)
+%xl(Progresss,ProgressBar-72.bmp,124,29)
+%xl(Progresst,ProgressBar-76.bmp,124,29)
+%xl(Progressu,ProgressBar-80.bmp,124,29)
+%xl(Progressv,ProgressBar-84.bmp,124,29)
+%xl(Progressw,ProgressBar-88.bmp,124,29)
+%xl(Progressx,ProgressBar-92.bmp,124,29)
+%xl(Progressy,ProgressBar-96.bmp,124,29)
+%xl(Progressz,ProgressBar-full.bmp,124,29)
+#
+#------------ Background Layer ------------#
+%V(0,0,-,-,-)%VB
+%Cl(-40,30,200,200)
+%dr(0,130,-,-,dedbde)%Cd%?C<|%xd(PlayerFallback)>
+#
+#------------ Foreground Layer ------------#
+%V(0,0,-,-,-)
+#-- Refresh Song info after volume pop-up --#
+%Vd(Player)%Vd(titlesingle)
+#
+#-- Clock --#
+%Vl(Player,120,2,-120,18,4)%ac%?cf<%cH:%cM|%cl:%cM %cP>
+#
+#-- Icon Stuff --#
+%Vl(Player,303,4,14,16,-)%?bp<%xd(ChargingIcon,%bl)|%xd(BatteryIcon,%bl)>
+%Vl(Player,283,4,16,16,-)%?mh<%xd(HoldIcon,%mh)|%xd(SleepIcon,%bs)>
+#
+%Vl(Player,283,4,16,16,-)
+%?mh<%xd(HoldIcon,%mh)|%?bs<%xd(SleepIcon)|%?lh<%t(0.1)%xd(La);%t(0.1)%xd(Lb);%t(0.1)%xd(Lc);%t(0.1)%xd(Ld);%t(0.1)%xd(Le);%t(0.1)%xd(Lf);%t(0.1)%xd(Lg);%t(0.1)%xd(Lh);%t(0.1)%xd(Li);%t(0.1)%xd(Lj);%t(0.1)%xd(Lk);%t(0.1)%xd(Ll)>>>
+%Vl(Player,263,4,16,16,-)
+%?mh<%?bs<%xd(SleepIcon)|%?lh<%t(0.1)%xd(La);%t(0.1)%xd(Lb);%t(0.1)%xd(Lc);%t(0.1)%xd(Ld);%t(0.1)%xd(Le);%t(0.1)%xd(Lf);%t(0.1)%xd(Lg);%t(0.1)%xd(Lh);%t(0.1)%xd(Li);%t(0.1)%xd(Lj);%t(0.1)%xd(Lk);%t(0.1)%xd(Ll)>|%?bs<%t(0.1)%xd(La);%t(0.1)%xd(Lb);%t(0.1)%xd(Lc);%t(0.1)%xd(Ld);%t(0.1)%xd(Le);%t(0.1)%xd(Lf);%t(0.1)%xd(Lg);%t(0.1)%xd(Lh);%t(0.1)%xd(Li);%t(0.1)%xd(Lj);%t(0.1)%xd(Lk);%t(0.1)%xd(Ll)>>>
+%Vl(Player,243,4,16,16,-)
+%?mh<%?bs<%?lh<%t(0.1)%xd(La);%t(0.1)%xd(Lb);%t(0.1)%xd(Lc);%t(0.1)%xd(Ld);%t(0.1)%xd(Le);%t(0.1)%xd(Lf);%t(0.1)%xd(Lg);%t(0.1)%xd(Lh);%t(0.1)%xd(Li);%t(0.1)%xd(Lj);%t(0.1)%xd(Lk);%t(0.1)%xd(Ll)>>>
+#
+#-- Album Art --#
+%Vl(Player,0,30,160,200,-)
+%xd(CoverArtMask)
+%?if(%px,>,4)<%?if(%px,>,8)<%?if(%px,>,12)<%?if(%px,>,16)<%?if(%px,>,20)<%?if(%px,>,24)<%?if(%px,>,28)<%?if(%px,>,32)<%?if(%px,>,36)<%?if(%px,>,40)<%?if(%px,>,44)<%?if(%px,>,48)<%?if(%px,>,52)<%?if(%px,>,56)<%?if(%px,>,60)<%?if(%px,>,64)<%?if(%px,>,68)<%?if(%px,>,72)<%?if(%px,>,76)<%?if(%px,>,80)<%?if(%px,>,84)<%?if(%px,>,88)<%?if(%px,>,92)<%?if(%px,>,96)<%?if(%px,=,100)<%xd(Progressz)|%xd(Progressy)>|%xd(Progressx)>|%xd(Progressw)>|%xd(Progressv)>|%xd(Progressu)>|%xd(Progresst)>|%xd(Progresss)>|%xd(Progressr)>|%xd(Progressq)>|%xd(Progressp)>|%xd(Progresso)>|%xd(Progressn)>|%xd(Progressm)>|%xd(Progressl)>|%xd(Progressk)>|%xd(Progressj)>|%xd(Progressi)>|%xd(Progressh)>|%xd(Progressg)>|%xd(Progressf)>|%xd(Progresse)>|%xd(Progressd)>|%xd(Progressc)>|%xd(Progressb)>|%xd(Progressa)>
+#
+#-- Song Info --#
+#
+#-- Playlist Counter --#
+%Vl(Player,4,12,56,18,4)
+%ar%pp 
+%Vl(Player,60,10,56,18,3)
+%al/ %pe
+#
+#-- Song Title --#
+%Vl(titlesingle,160,42,-8,28,6)
+%s%ar%?it<%it|%fn>
+#
+#-- Toggle the Secondary info according to user preference (adopted from AdwaitaPod) --#
+%Vl(Player,170,71,-8,21,5)
+%s%ar%?it<%?if(%St(statusbar), =,off)<%t(6)%ia;%t(6)%id;%t(0)>%?if(%St(statusbar), =,top)<%id>%?if(%St(statusbar), =,bottom)<%ia>|%d(1)>
+#
+#-- Release Year & Genre (When available) --#
+%Vl(Player,174,99,-8,21,3)%Vf(6b6d6b)
+%s%ar%?it<%?iy<%ss(0,4,%iy)%?ig< - %ig>|%?ig<%ig|%fc>>|%fc>
+#
+#-- Player Slider --#
+#%Vl(Player,90,72,36,115,-)
+#%pb(-,-,-,-,image,PlayerSlider.bmp,vertical,invert)
+#
+#-- Play time --#
+%Vl(Player,176,136,48,21,3)
+%al%pc
+%Vl(Player,264,136,-8,21,3)
+%ar%pt
+#
+#-- Shuffle & Repeat Status --#
+%Vl(Player,223,140,16,14,-)
+%xd(ShuffleIcon,%ps)
+%Vl(Player,249,139,17,16,-)
+%xd(RepeatIcon,%mm)
+#
+#-- Play status icon --#
+%Vl(Player,210,168,60,30,-)
+%xd(PlayIcon,%mp,-1)
+#
+%Vl(Player,179,177,14,12,-)
+%?if(%pp, =, 1)<%xd(PlaylistPositionIcon,1)|%xd(PlaylistPositionIcon,2)>
+%Vl(Player,287,177,14,12,-)
+%?if(%pp, =, %pe)<%xd(PlaylistPositionIcon,3)|%xd(PlaylistPositionIcon,4)>
+#
+#--- Volume Overlay ---#
+%Vl(Player,148,210,16,14,-)
+%?if(%pv, =, -90)<%xd(VolumeIcons,1)>
+%?and(%if(%pv, <=, -60),%if(%pv,>,-90))<%xd(VolumeIcons,2)>
+%?and(%if(%pv, <=, -30),%if(%pv,>,-60))<%xd(VolumeIcons,3)>
+%?if(%pv,>,-30)<%xd(VolumeIcons,4)>
+%Vl(Player,176,215,-4,4,-)
+%Vf(4a92e6)
+%pv(-,-,-,-,noborder)
+#

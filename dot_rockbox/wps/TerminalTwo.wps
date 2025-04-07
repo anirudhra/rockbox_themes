@@ -1,0 +1,186 @@
+#Theme Name: Terminal(Two)
+#Platform: iPod Video (320x240x16) - Standard Build
+#Version 0.1 Beta
+#Created By: Jeffrey Rodriguez (jtrodriguez on Forums)
+#License CC-BY-SA
+#
+#Notes: The layout is based on the ncurses VLC player
+#
+#If you want to see your AA after hold is toggled set the backlight on hold setting to normal so there is a delay.
+#
+# terminal Rewritten slightly in order to allow (foreground/background) colours to be changed on-the-fly via rockbox settings menu rather than needing to edit the wps
+# by P Poorten Feb 2017
+# initially defaults to the usual green-on-black
+
+%wd
+%X(d)
+
+
+%Cl(0,0,240,240)
+
+
+
+
+###Displays AA on Lock if available###
+%?mh<%?C<%Vd(d)|%Vd(a)%Vd(z)>|%Vd(z)>
+
+
+
+
+
+###Clears Screen Area###
+%Vl(z,0,0,320,240,1)%Vf(-)%Vb(-)
+
+%Vl(z,0,0,320,15,1)%Vf(-)%Vb(-)
+%dr(0,0,-,-)
+%Vl(z,5,0,235,15,1)%Vf(-)%Vb(-)%Vs(invert)
+Rockbox Media Player
+%Vl(z,240,0,40,15,1)%Vf(-)%Vb(-)%Vs(invert)
+%?lh<HDD|%dr(0,0,-,-)>
+
+###Labels###
+%Vl(z,6,20,50,60,1)%Vf(-)%Vb(-)
+Current
+State
+Position
+Volume
+
+###Song Information###
+%Vl(z,55,20,250,60,1)%Vf(-)%Vb(-)
+: %s%?ia<%ia - %it|N/A>
+: %?mp<Stop|Play|Pause|Fast Forward|Rewind|Recording|Recording Paused|FM|FM Paused>
+: %?pc<%pc / %pr %(%px%%%)|0:00 / 0:00 %(0%%%)>
+: %?pv<Mute|%pv dB|%pv dB|Peak> 
+
+###Progess Bar###
+%Vl(z,5,85,310,27,1)%Vf(-)%Vb(-)%dr(0,0,-,-)
+%Vl(z,6,86,308,25,1)%Vf(-)%Vb(-)
+%pb(4,5,300,15,pb.bmp)
+
+###Border###
+%Vl(z,5,122,310,113,1)%Vf(-)%Vb(-)%dr(0,0,-,-)
+%Vl(z,6,123,308,111,1)%Vf(-)%Vb(-)
+
+
+
+###Pause Toggle###
+%V(1,1,1,1,1)%Vf(000000)%Vb(000000)
+#%?mh<|%?mp<|%Vda|%Vdb|>> ###Uncomment this line and comment the next line out if you want Details as default and Playlist on pause
+%?mh<|%?mp<|%Vd(b)|%Vd(a)|>>
+
+
+
+##########Playing#########
+
+
+###Title###
+%Vl(b,120,115,80,15,1)%Vf(-)%Vb(-)
+%?pn<%s%ac%pn|%acPlaylist>
+
+###Play List###
+%Vl(b,15,134,290,100,1)%Vf(-)%Vb(-)
+%Vp(1, %?it<%pp - %ia - %it|%pp - %fn>)
+
+
+###Battery###
+%Vl(b,280,0,35,15,1)%Vf(-)%Vb(-)%Vs(invert)
+%ar%bl%%
+###################################
+
+
+
+
+
+##########Paused##########
+
+###Clears Screen#
+%Vl(a,15,134,280,100,1)%Vf(-)%Vb(-)
+
+###Time###
+%Vl(a,280,0,35,15,1)%Vf(-)%Vb(-)%Vs(invert)
+%ar%cH:%cM
+
+###Title###
+%Vl(a,120,115,80,15,1)%Vf(-)%Vb(-)
+%acDetails
+
+###Info Labels###
+%Vl(a,15,134,35,100,1)%Vf(-)%Vb(-)
+
+Track
+Album
+Year
+Genre
+
+
+###Song Info####
+
+%Vl(a,65,134,90,100,1)%Vf(-)%Vb(-)
+
+%s%al%pp/%pe
+%s%al%id
+%s%al%iy
+%s%al%ig
+
+%Vl(a,55,134,5,100,1)%Vf(-)%Vb(-)
+
+:
+:
+:
+:
+
+###Spec Labels###
+%Vl(a,165,134,60,100,1)%Vf(-)%Vb(-)
+
+Codec
+Bitrate
+Frequency
+Size
+
+###Song Specs####
+
+%Vl(a,240,134,65,100,1)%Vf(-)%Vb(-)
+
+%s%al%fc
+%s%al%fb kbit/s
+%s%al%ff Hz
+%s%al%fs kB
+
+%Vl(a,230,134,5,100,1)%Vf(-)%Vb(-)
+
+:
+:
+:
+:
+
+
+###Album Art###
+
+
+
+###Clears Screen###
+%Vl(d,0,0,320,240,1)%Vf(-)%Vb(-)
+
+
+%Vl(d,0,0,240,240,1)%Vf(-)%Vb(-)
+%Cd
+
+%Vl(d,245,0,70,240,1)%Vf(-)%Vb(-)
+
+Album:
+%s%id
+
+Year:
+%s%iy
+
+Artist:
+%s%ia
+
+Song:
+%s%it
+
+Track:
+%s%pp/%pe
+
+
+##################################

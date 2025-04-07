@@ -1,0 +1,84 @@
+# Theme:WMP11
+# Version:1.0 (3/20/2025)
+# Device: iPod Video
+# License: CC-BY-SA
+# Creator: VB
+#
+#
+# Credits to other creators:
+# This theme wouldn't have been possible without the earlier work of:
+# creators of ipodmod3blk (K4sum1), ipodmod3blkfixed (Paul Sauro),
+# adwaitapod (evan Dook), iRetro (J Donsen), iPod reFresh (Ciprian Dragu)
+# For the battery, hold, and disk access icons, credits to K4sum1
+# For the concept, credits to Microsoft.. but everyone already knows this lol
+# Go listen to Andre Nickatina, The Pharcyde, Gangsta Pat, Tommy Wright III, Celly
+# Cel, Playa Fly, Al Kapone, Lil Keke, Geto Boys, Three 6 Mafia and Self Tightld,
+# who are my fav artists on my iPod that I feel deserve a shoutout!
+# Thank you so much for all the support this theme received on Reddit!
+# I hope you enjoy it :) <3
+# For suggestions/requests/other inquiries, dm me on Reddit: u/suzdali
+
+
+%Fl(2,14-SegoeUI.fnt)
+%Fl(3,20-segoe-ui.fnt)
+%Fl(4,16-segoe-ui.fnt)
+%Fl(5,18-segoe-ui.fnt)
+%Fl(6,18-segoe-ui-italic.fnt)
+
+# Load Backdrop
+%X(vistasbsf.bmp)
+%xl(B,battery.bmp,0,0,24)
+%xl(O,Hold Icon - SBS.bmp,0,0)
+
+
+# Battery
+%V(257,226,19,10,-)
+%?bp<%?bc<%t(1.0)%xd(Ba);%t(1.0)%xd(Bb)|%xd(Bc)>|%?bl<%xd(Bd)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)|%xd(Bk)|%xd(Bl)|%xd(Bm)|%xd(Bn)|%xd(Bo)|%xd(Bp)|%xd(Bq)|%xd(Br)|%xd(Bs)|%xd(Bt)|%xd(Bu)|%xd(Bv)|%xd(Bw)|%xd(Bx)>>#
+
+
+# Battery text
+%V(222,221,32,14,2)%Vf(FFFFFF)%Vb(000000)
+%ar%bl%%
+#
+
+#-- Time Bar
+%V(283,221,30,14,2)%Vf(FFFFFF)%Vb(000000)
+%s%al%?cf<%cH:%cM|%cl:%cM>
+
+
+#-- Hold Icon
+%V(5,3,7,10,-)%Vf(F4F4F4)%Vb(000000)
+%?mh<%xd(O)|%?mr<%xd(O)>>
+
+# default iconset viewport
+%Vi(-,0,10,320,210,1)
+
+# main ui viewport
+#%Vi(MainMenu,10,30,256,220,1)
+
+# if we are on the main screen, draw the list using viewport 'main'
+%?if(%cs, = , 1)<%Lb(MainMenuVP,64,64,tile)%Vd(titlebar)>
+
+# main viewport
+%Vl(MainMenuVP,0,0,64,64,1) # the coordinates here are relative to the %Lb's width and height
+%xl(M,aeroiconset1.bmp,0,0,9) # normal icons
+%xl(S,aeroiconselect1.bmp,0,0,9) # selected icons
+%?Lc<%xd(S, %LN)|%xd(M, %LN)> # highlights selected icons
+
+
+#Trying to add album art#
+
+# 	Display bar on bottom with album art, track info or volume indicator as necessary
+%?mp<|%?C<%Vd(albumart)%Vd(currenttrack)|%Vd(currenttrackshiftedleft)>|%?C<%Vd(albumart)%Vd(currenttrack)|%Vd(currenttrackshiftedleft)>>
+#
+
+
+#	Current Track shifted left
+%Vl(currenttrackshiftedleft,12,221,203,-,2)%Vf(FFFFFF)%Vb(F4F4F4)
+%s%al%?ia<%ia - |>%?it<%it|%fn>
+
+
+#-- Track background
+#%Vl(trackbg,0,208,320,32,-)%Vf(ffffff)%Vb(F4F4F4)
+#%xd(A)
+#

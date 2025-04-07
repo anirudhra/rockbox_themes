@@ -1,0 +1,48 @@
+# ===========================================================
+# Rocker : ROCKbox themes for ipod, x5, e2xx
+# Designed by |2eM!x
+# Gimme Cred
+# ===========================================================
+#
+# Converted to 320x240 and slightly modified by P Poorten Oct 2016
+%X(bground320d.bmp)
+%xl(A,batt1.bmp,232,21)
+%xl(B,batt2.bmp,232,21)
+%xl(C,batt3.bmp,232,21)
+%xl(D,batt4.bmp,232,21)
+%xl(E,batt5.bmp,232,21)
+%xl(F,battc.bmp,232,21)
+%xl(G,battp.bmp,232,21)
+%xl(H,hold2.bmp,207,18)
+%xl(I,nohold2.bmp,207,18)
+%xl(J,norep.bmp,274,19)
+%xl(K,rep.bmp,274,19)
+%xl(L,rep1.bmp,274,19)
+%xl(M,repS.bmp,274,19)
+%xl(N,repAB.bmp,274,19)
+%xl(O,shuff.bmp,253,19)
+%xl(P,ffcon2.bmp,154,19)
+%xl(Q,rwcon2.bmp,154,19)
+%xl(R,plcon2.bmp,154,19)
+%xl(S,pscon2.bmp,154,19)
+%x(T,batt.bmp,232,21)
+%wd
+%?bp<%xd(G)|%?bl<%xd(A)|%xd(B)|%xd(C)|%xd(D)|%xd(E)>>
+%?mp<%xd(S)|%xd(R)|%xd(S)|%xd(P)|%xd(Q)>
+%?mh<%xd(H)|%xd(I)>
+%?mm<%xd(J)|%xd(K)|%xd(L)|%xd(M)|%xd(N)>
+%?ps<%xd(O)> 
+
+%V(25,171,266,22,-)
+%pb(0,0,266,22,pbar5.bmp)
+%V(25,18,100,15,1)
+%pp of %pe
+
+%V(20,115,280,50,1)
+%t(5)%ac%?it<%it|%fn>;%t(20)%ac%s%?it<%it|%fn>
+%t(5)%ac%?ia<%ia|%d(2)>;%t(20)%ac%s%?ia<%ia|%d(2)>
+%t(5)%ac%?id<%id|%d(1)>;%t(20)%ac%s%?id<%id|%d(1)>
+
+%V(20,202,280,15,1)
+%al%pc%ac%pv%ar-%pr
+
