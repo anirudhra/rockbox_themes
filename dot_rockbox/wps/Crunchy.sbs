@@ -1,0 +1,54 @@
+# Theme Name: Crunchy 
+# By: Thomas Pfeifer (tpchuckles(at)gmail.com)
+# Platform: iPod Video (320x240x16)
+# Version: 0.1
+# Licenced CC-BY-SA 3.0
+# Code based on Crisp by P Poorten (https://themes.rockbox.org/index.php?themeid=2724&target=ipodvideo), which is based on Crisp by Jack Yi (https://themes.rockbox.org/index.php?themeid=1570&target=sansafuzev2). 
+# I made some slight changes to make things play nice with the larger (now default) 18-Terminus font, and I moved some things around based on personal preferences. (Red is now the default color universally (editable via Foreground Color) instead of the white/yellow stuff from Crisp. Volume is now lower left on WPS. Battery position is adjusted for the font. Clock time is now upper right). 
+# Last updated: 2025/04/29
+
+#%wd
+#
+#Main Panel:
+%Vi(-,0,0,320,216,1)
+#
+#Bottom Panel:
+%?mp<|%Vd(e)|%Vd(f)|||%Vd(g)|%Vd(h)|%Vd(i)|%Vd(j)>
+#
+#Playing Track
+%Vl(e,0,222,220,-,1)
+%ac%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2)|%Sx(Unknown)>>> - %?it<%it|%fn>
+#
+#Paused Track
+%Vl(f,0,222,60,-,1)
+%acPAUSED
+%Vl(f,65,222,155,-,1)
+%ac%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2)|%Sx(Unknown)>>> - %?it<%it|%fn>
+#
+#Recording
+%Vl(g,144,222,139,-,1)
+%?Rp<%s%al Recording - %?Re<WAV|AIFF|WV|MP3> at %?Rb<8|16|24|32|40|48|56|64|80|96|112|128|144|160|192> Kbps>
+#
+#Recording paused
+%Vl(h,144,222,8,-,1)
+%?Rp<%alS>
+%Vl(h,154,222,129,-,1)
+%?Rp<%s%al Recording - %?Re<WAV|AIFF|WV|MP3> at %?Rb<8|16|24|32|40|48|56|64|80|96|112|128|144|160|192> Kbps>
+#
+#FM Radio
+%Vl(i,144,222,139,-,1)
+%?tp<%s%al%?Tn<%Tn >%tf - %?ts<%Sx(Stereo)|%Sx(Mono)>>
+#
+#FM Radio muted
+%Vl(j,144,222,8,-,1)
+%?tp<%alS>
+%Vl(j,154,222,129,-,1)
+%?tp<%s%al%?Tn<%Tn >%tf - %?ts<%Sx(Stereo)|%Sx(Mono)>>
+#
+#Real Time Clock:
+%V(270,0,50,-,1)%Vf(-)
+%al%?cf<%cH:%cM|%cl:%cM%cp>
+#
+#Battery:
+%V(230,222,90,-,1)%Vf(-)
+%arBatt: %?bp<%?bc<Chg|%bl%%>|%bl%%>

@@ -1,0 +1,104 @@
+# Theme Name: Crunchy 
+# By: Thomas Pfeifer (tpchuckles(at)gmail.com)
+# Platform: iPod Video (320x240x16)
+# Version: 0.1
+# Licenced CC-BY-SA 3.0
+# Code based on Crisp by P Poorten (https://themes.rockbox.org/index.php?themeid=2724&target=ipodvideo), which is based on Crisp by Jack Yi (https://themes.rockbox.org/index.php?themeid=1570&target=sansafuzev2). 
+# I made some slight changes to make things play nice with the larger (now default) 18-Terminus font, and I moved some things around based on personal preferences. (Red is now the default color universally (editable via Foreground Color) instead of the white/yellow stuff from Crisp. Volume is now lower left on WPS. Battery position is adjusted for the font. Clock time is now upper right). 
+# Last updated: 2025/04/29
+
+#Disable Status Bar
+%wd
+#
+#Upper panel:
+#
+#Playlist name or "Rockbox"
+%V(0,0,254,15,1)%Vf(-)
+%al%?pn<%s%pn|Rockbox>
+#
+#Repeat mode & Shuffle:
+%V(257,8,30,15,1)%Vf(-)
+%ar%?mm<|RptAll|Rpt1|RptShf|RptAB>
+%V(289,8,25,15,1)%Vf(-)
+%ar%?ps<Shf>
+#
+#ALBUM ART AND SONG INFO:
+#
+%?C<%Vd(d)|%Vd(e)>
+#
+#TITLES WITH ALBUM ART:
+#
+%Vl(d,6,40,134,134,-)%Vf(-)
+%Cl(0,0,134,134)
+%Cd
+#
+#Artist:
+%Vl(d,144,57,173,20,1)%Vf(-)
+%ac%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2) [NO TAG]|[NO TAG]>>>
+#
+#Album:
+%Vl(d,144,77,173,20,1)%Vf(-)
+%ac%s%?id<%id|%?d(1)<%d(1) [NO TAG]|[NO TAG]>>
+#
+#Track:
+%Vl(d,144,97,173,20,1)%Vf(-)
+%ac%s%?it<%it|%fn  [NO TAG]>
+#
+#Playlist position:
+%Vl(d,144,142,174,15,1)%Vf(-)
+%ac%s%pp / %pe
+#
+#TITLES WITHOUT ALBUM ART:
+#
+#Artist:
+%Vl(e,6,57,308,20,1)%Vf(-)
+%ac%s%?ia<%ia|%?iA<%iA|%?d(2)<%d(2) [NO TAG]|[NO TAG]>>>
+#
+#Album:
+%Vl(e,6,77,308,20,1)%Vf(-)
+%ac%s%?id<%id|%?d(1)<%d(1) [NO TAG]|[NO TAG]>>
+#
+#Track:
+%Vl(e,6,97,308,20,1)%Vf(-)
+%ac%s%?it<%it|%fn  [NO TAG]>
+#
+#Playlist position:
+%Vl(e,6,142,308,15,1)%Vf(-)
+%ac%s%pp / %pe
+#
+# #File Info:
+# %Vl(e,6,117,308,15,0)%Vf(-)
+# %ac%fc %?fv<~|>%fbkbps %?rg<|T%rg|A%rg|TS%rg|AS%rg|>
+#
+# %Vl(d,144,117,174,15,0)%Vf(-)
+# %ac%fc %?fv<~|>%fbkbps %?rg<|T%rg|A%rg|TS%rg|AS%rg|>
+#
+#PLAYER CONTROLS:
+#
+#Progress Bar:
+%V(11,189,298,6,-)%Vf(-)
+%pb(0,0,298,6,-)
+#
+#Play status:
+%V(113,200,94,20,1)%Vf(-)
+%ac%?mp<Stop|Play|Pause|Forward|Rewind>
+#
+#Time and +/-:
+%V(11,200,50,15,1)%Vf(-)
+%al%pc
+%V(259,200,50,15,1)%Vf(-)
+%ar-%pr
+#
+#LOWER PANEL:
+#
+#Real Time Clock:
+%V(270,0,50,20,1)%Vf(-)
+%al%?cf<%cH:%cM|%cl:%cM%cp>
+#
+#Volume dB:
+%V(0,222,70,-,1)%Vf(-)
+%arVol:%pv
+#
+#Battery:
+%V(230,222,90,-,1)%Vf(-)
+%arBatt: %?bp<%?bc<Chg|%bl%%>|%bl%%>

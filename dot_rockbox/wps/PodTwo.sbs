@@ -1,5 +1,6 @@
 # Theme by Guillaume Cocatre-Zilgien <gcocatre@gmail.com>
 # CC-BY-SA
+# Modded by IRD, August 2021
 
 # Disable Status Bar
 %wd
@@ -40,11 +41,13 @@
 
 # Menu Title
 %Vl(title,40,6,240,14,2)
-%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<…|>%?Lt<%Lt|Rockbox>%?if(%lh, =, h)<…|>%?if(%mh, =, h)< ]|>
+%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<…|>%?Lt<%Lt|iPod>%?if(%lh, =, h)<…|>%?if(%mh, =, h)< ]|>
+##%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<…|>%?Lt<%Lt|%?cf<%cH:%cM|%cl:%cM %cP>>%?if(%lh, =, h)<…|>%?if(%mh, =, h)< ]|>
 
 # MS-BOX Menu Title
 %Vl(msboxtitle,40,6,240,14,2)
-%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<…|>%?Lt<%?if(%Lt, =, Rockbox)<MS-BOX|%Lt>|MS-BOX>%?if(%lh, =, h)<…|>%?if(%mh, =, h)< ]|>
+#%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<…|>%?Lt<%?if(%Lt, =, Rockbox)<MS-BOX|%Lt>|MS-BOX>%?if(%lh, =, h)<…|>%?if(%mh, =, h)< ]|>
+%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<…|>%?Lt<%?if(%Lt, =, iPod)<MS-BOX|%Lt>|MS-BOX>%?if(%lh, =, h)<…|>%?if(%mh, =, h)< ]|>
 
 # Theme Menu Title
 %Vl(themetitle,40,6,240,14,2)
@@ -71,10 +74,10 @@
 %al%>%>
 
 %Vl(metadata,24,222,272,14,2)
-%s%ac%?it<“%it”|%fn>%?ia<%, by %ia|%?iA<%, by %iA|>>
+%s%ac%?it<“%it”|%fn>%?ia<%, %ia|%?iA<%, by %iA|>>
 
 %Vl(composer,24,222,272,14,2)
-%s%ac%?it<“%it”|%fn>%?ic<%, by %ic|%?ia<%, by %ia|%?iA<%, by %iA|>>>
+%s%ac%?it<“%it”|%fn>%?ic<%, %ic|%?ia<%, by %ia|%?iA<%, by %iA|>>>
 
 %Vl(arrows,301,222,19,14,2)
 %al%<%<
@@ -87,6 +90,6 @@
 %Vl(date,6,222,308,14,2)
 %al%?cu<Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday>, %?cm<January|February|March|April|May|June|July|August|September|October|November|December> %ce, %cY%ar%?cf<%cH:%cM|%cl:%cM %cP>
 
-# Themes URL
+# Themes URL/time
 %Vl(themesurl,24,222,272,14,2)
-%s%ac http://caudec.net/rockbox/ 
+%s%ac%?cf<%cH:%cM|%cl:%cM %cP> 

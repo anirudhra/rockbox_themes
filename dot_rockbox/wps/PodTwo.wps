@@ -1,5 +1,6 @@
 # Theme by Guillaume Cocatre-Zilgien <gcocatre@gmail.com>
 # CC-BY-SA
+# Modded by IRD, August 2021
 
 # Disable Status Bar
 %wd
@@ -33,7 +34,8 @@
 
 # WPS Title
 %Vl(title,40,6,240,14,2)
-%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<…|>Now Playing %pp/%pe%?if(%lh, =, h)<…|>%?if(%mh, =, h)< ]|>
+#%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<…|>Now Playing %pp/%pe%?if(%lh, =, h)<…|>%?if(%mh, =, h)< ]|>
+%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<…|>%?pS(15)<Now Playing|%?cf<%cH:%cM|%cl:%cM %cP>>%?if(%lh, =, h)<…|>%?if(%mh, =, h)< ]|>
 
 # Battery (graphical)
 %Vl(batteryg,289,6,25,12,-)
@@ -49,7 +51,8 @@
 
 # Disc and Track Number / Playlist Entry
 %Vl(metadata,6,51,308,19,-)
-%s%ac%?ik<Disc %ik %| %?in<Track %in|Entry %pp>|%?in<Track %in|Entry %pp>>
+#%s%ac%?ik<Disc %ik %| %?in<Track %in|Entry %pp>|%?in<Track %in|Entry %pp>>
+%s%ac%pp of %pe
 
 # Track Title or Filename
 %Vl(metadata,6,76,308,19,-)
@@ -57,15 +60,16 @@
 
 # Artist or Album Artist
 %Vl(artist,6,101,308,19,-)
-%s%ac%?ia<by %ia|%?iA<by %iA|Unknown Artist>>
+%s%ac%?ia<%ia|%?iA<by %iA|Unknown Artist>>
 
 # Composer, Artist or Album Artist
 %Vl(composer,6,101,308,19,-)
-%s%ac%?ic<by %ic|%?ia<by %ia|%?iA<by %iA|Unknown Artist>>>
+%s%ac%?ic<%ic|%?ia<by %ia|%?iA<by %iA|Unknown Artist>>>
 
 # Album Title and Year
 %Vl(metadata,6,126,308,19,-)
-%s%ac%?id<%id|Untitled Album>%?iy< %| %iy|>
+#%s%ac%?id<%id|Untitled Album>%?iy< %| %iy|>
+%s%ac%?id<%id|Untitled Album>%?iy< %(%iy%)|>
 
 # Next Track
 %Vl(nexttrack,6,151,308,19,-)

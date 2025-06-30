@@ -1,0 +1,61 @@
+# Theme Name: Crunchy 
+# By: Thomas Pfeifer (tpchuckles(at)gmail.com)
+# Platform: iPod Video (320x240x16)
+# Version: 0.1
+# Licenced CC-BY-SA 3.0
+# Code based on Crisp by P Poorten (https://themes.rockbox.org/index.php?themeid=2724&target=ipodvideo), which is based on Crisp by Jack Yi (https://themes.rockbox.org/index.php?themeid=1570&target=sansafuzev2). 
+# I made some slight changes to make things play nice with the larger (now default) 18-Terminus font, and I moved some things around based on personal preferences. (Red is now the default color universally (editable via Foreground Color) instead of the white/yellow stuff from Crisp. Volume is now lower left on WPS. Battery position is adjusted for the font. Clock time is now upper right). 
+# Last updated: 2025/04/29
+
+#Disable Status Bar
+%wd
+#
+#RDS name or generic 'FM Radio'
+%V(6,8,308,15,1)
+%al%?ty<%s%ty|%Sx(FM Radio)>
+#
+#Current Frequency
+%V(10,40,300,20,1)%?if(%ss(0,1,%St(foreground color),number),>,9)<%Vf(ffffff)|%Vf(FFE60F)>
+%ac%tf MHz
+#
+#Mode or Presets
+%V(10,70,300,20,1)
+%ac%?tm<%Sx(Mode:) %Sx(Scan)|%s%Tn [%Ti / %Tc]>
+#
+#Signal strength bar
+%V(11,100,298,15,-)
+%ac%tr dBuV
+# %tr(2,4,294,2,-)
+#
+#Tuner Bar:
+%V(11,125,298,6,-)
+%pb(0,0,298,6,-)
+#
+#FM Play Status:
+%V(53,200,114,15,1)
+%ac%?mp<|||||Recording|Paused|Playing|Muted>
+#
+#FM Min/Max Freqs:
+%V(11,200,40,15,1)
+%al%ta
+%V(269,200,40,15,1)
+%ar%tb
+#
+#LOWER PANEL:
+#
+#Real Time Clock
+%V(270,0,50,-,1)%Vf(-)
+%al%?cf<%cH:%cM|%cl:%cM%cp>
+#
+#Sound Mode
+%V(144,222,114,-,1)
+#%ac%tr dBuV
+%ac%?ts<%Sx(Stereo)|%Sx(Mono)>
+#
+#Volume dB:
+%V(260,224,23,-,1)
+%ar%pv
+#
+#Battery
+%V(230,222,90,-,1)%Vf(-)
+%arBatt: %?bp<%?bc<Chg|%bl%%>|%bl%%>
